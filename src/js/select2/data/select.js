@@ -203,6 +203,9 @@ define([
     data = $.data($option[0], 'data');
 
     if (data != null) {
+	    if (!this.options.get("cache_disabledOption")) {
+           data.disabled = $option.prop('disabled');
+        }
       return data;
     }
 
